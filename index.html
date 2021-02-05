@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+      <meta charset="utf-8">
+    <title>To-Do List</title> 
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+ 
+  <body> 
+
+    <div class="center">
+        <div class="button">
+            <span class="text">To-Do List</span>
+            <span class="icon"><i class = "fas fa-sort-down"></i> </span>
+        </div>
+        <div class="field">
+            <input type="text" required placeholder="Add your new to-do list">
+            <span class="adn-btn">ADD</span>
+        </div>
+        <ul>
+            <li><span><i class="fa fa-trash"></i></span>Get a new laptop</li>
+            <li><span><i class="fa fa-trash"></i></span>Get a new laptop</li>
+            <li><span><i class="fa fa-trash"></i></span>Get a new laptop</li>
+            <li><span><i class="fa fa-trash"></i></span>Get a new laptop</li>
+            <li><span><i class="fa fa-trash"></i></span>Get a new laptop</li>
+        </ul>
+    </div>
+
+    <script>
+        $('.adn-btn').click(function(){
+            $('ul').append(" <li><span><i class='fa fa-trash'></i></span>"+ $('input').val() +"</li>");
+            $('input').val("");
+        });
+
+        $('ul').on("click", 'span', function(){
+
+            $(this).parent().fadeOut(500,function(){
+                $(this).remove();
+            });
+
+        });
+    </script>
+  </body>
+</html>
